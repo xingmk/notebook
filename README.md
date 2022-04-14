@@ -3,7 +3,6 @@
 #  **Install Manjaro**   
 
 ##  Author：*xmk*   
-非常欢迎各位能够分享各自意见。peace！
 
 >  shell: fish  
 >  WM: i3wm  
