@@ -1,3 +1,62 @@
+# Manjaro package management
+
+## install
+`sudo pacman -S <package>`
+
+## fresh
+```sh
+sudo pacman -Sy 
+sudo pacman -Syy 
+sudo pacmam -Su
+sudo pacman -Syu
+sudo pacman -Syyu 
+```
+## search 
+```sh
+sudo pacman -Ss <package>
+sudo pacman -Qs 
+sudo pacman -Q | wc -l 
+sudo pacman -Qe | wc -l 
+sudo pacman -Qeq | wc -l 
+
+sudo pacman -Qdt  
+sudo pacman -Qdtq  
+```
+## delete
+```sh
+sudo pacman -R <package>
+sudo pacman -Rs <package>
+sudo pacman -Rns <package>
+
+sudo pacman -R $(pacman -Qdtq)
+```
+
+# Debian package management
+
+## Install
+`sudo apt install package-name`
+
+## fresh
+`sudo apt update && sudo apt upgrade`
+
+## delete
+`sudo apt purge pkg-name`
+
+
+## search
+
+```sh
+apt search string
+aptitude search string
+apt-cache search string
+apt-file search file-path
+```
+
+## Other
+```sh
+sudo aptitude
+apt-mark showmanual | cat
+```
 # About Files
 
 ## Makefile
@@ -85,7 +144,7 @@ git config --global user.email "xingmk.@gmail.com"
  `git clone https://example`  
  
  
-# create a git repositories
+## create a git repositories
 ```
 1. mkdir install
 2. cd install
@@ -105,7 +164,7 @@ git config --global user.email "xingmk.@gmail.com"
 ```
  
 
-## To write a program
+# To write a program
 
 > About Py
 ```sh
@@ -150,62 +209,3 @@ nmtui
  curl https://voice.baidu.com/act/newpneumonia/newpneumonia/?from=osari_pc_3 | grep '<script>require.config' > data    
 
 
-# Manjaro package management
-
-## install
-`sudo pacman -S <package>`
-
-## fresh
-```sh
-sudo pacman -Sy 
-sudo pacman -Syy 
-sudo pacmam -Su
-sudo pacman -Syu
-sudo pacman -Syyu 
-```
-## search 
-```sh
-sudo pacman -Ss <package>
-sudo pacman -Qs 
-sudo pacman -Q | wc -l 
-sudo pacman -Qe | wc -l 
-sudo pacman -Qeq | wc -l 
-
-sudo pacman -Qdt  
-sudo pacman -Qdtq  
-```
-## delete
-```sh
-sudo pacman -R <package>
-sudo pacman -Rs <package>
-sudo pacman -Rns <package>
-
-sudo pacman -R $(pacman -Qdtq)
-```
-
-# Debian package management
-
-## Install
-`sudo apt install package-name`
-
-## fresh
-`sudo apt update && sudo apt upgrade`
-
-## delete
-`sudo apt purge pkg-name`
-
-
-## search
-
-```sh
-apt search string
-aptitude search string
-apt-cache search string
-apt-file search file-path
-```
-
-## Other
-```sh
-sudo aptitude
-apt-mark showmanual | cat
-```
