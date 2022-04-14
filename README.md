@@ -11,8 +11,8 @@
 1. 需要准备的东西 
 2. 开始安装 Manjaro Linux
 3. 更换到国内的镜像源 
-4. 进行一些安装与配置 
-> (shell:fish WM:i3 Terminal: alacritty) 
+4. 进行一些安装与配置   
+  (shell:fish WM:i3 Terminal: alacritty) 
 5. 美化一下终端
 6. 对键位进行一些修改
 7. 中文输入法的安装配置
