@@ -43,7 +43,7 @@
 
 **首先执行:**
  
-` sudo vi /etc/pacman.conf `
+`   sudo vi /etc/pacman.conf `
 
 > 加上以下内容：
  
