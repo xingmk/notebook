@@ -1,6 +1,32 @@
 # Notes: **Install Manjaro**   
 
 ## Author：*xmk*   
+<!-- TOC Redcarpet -->
+
++ [概括:](#概括)
+    * [需要准备的东西](#需要准备的东西)
+    * [开始安装](#开始安装)
+    * [更换到国内的镜像源](#更换到国内的镜像源)
+    * [进行一些配置](#进行一些配置)
+        - [选择一个好用的编辑器,可以安装neovim or code](#选择一个好用的编辑器-可以安装neovim-or-code)
+        - [添加pacman高亮](#添加pacman高亮)
+        - [Shell: fish](#shell-fish)
+        - [在终端设置快捷方式](#在终端设置快捷方式)
+        - [WM: i3](#wm-i3)
+        - [terminal:alacritty](#terminal-alacritty)
+        - [修改i3的其他配置](#修改i3的其他配置)
+        - [修改一些键位](#修改一些键位)
+        - [美化一下终端](#美化一下终端)
+        - [中文输入法的安装配置](#中文输入法的安装配置)
+        - [推荐一些好用的app](#推荐一些好用的app)
+        - [MySQL的安装与配置](#mysql的安装与配置)
+                * [初始化MySQL](#初始化mysql)
+                * [开机启动MySQL服务](#开机启动mysql服务)
+                * [使用MySQL修改密码](#使用mysql修改密码)
+                * [可为MySQL设置启动快捷键](#可为mysql设置启动快捷键)
+    * [后续添加的一些东西](#后续添加的一些东西)
+
+<!-- /TOC -->
 
 >  shell: fish  
 >  WM: i3wm  
