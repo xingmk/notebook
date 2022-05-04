@@ -1,20 +1,18 @@
 ## create  &&  inquire (创建 查询)
 ```mysql
-
+**create** 
 create database DB_name;  --> create   
 
-create database if not exists DB_name;  --> create(judge if not exists)
+create database if not exists DB_name;           --> create(judge if not exists)
 create database DB_name character set utf8;      --> create(set character format)
 
-
-show databases;           --> show more   
-show create database DB_name  --> show instruction when creating
+show databases;                --> show more   
+show create database DB_name   --> show instruction when creating
 ```
 
 ## Revise (修改)
 ```mysql
 alter DB_name character set gbk;  --> alter character format
-
 ```
 
 ## delete (删除)
@@ -105,7 +103,103 @@ alter table Name_table drop Name_field;   --> delete table field
 ### date type 
 > 可以使用字符串存储时间  
 
+| type | format | explanation | 
+| :---: | :---: | :---: |
+| **date** | 2022-05-04 | 日期 只存储年月日 |
+| time | 11:12:13 | 时间 只存储分秒 |
+| year | 2021 | 年份 | 
+| **datetime** | 2022-05-04 14:35:25 | 时期+时间 存储年月日时分秒| 
+| timestamp | 202205-04 143525 | 时期+时间 （时间戳）|
 
 
 
+## field constraint 
+> 在创建数据表中，指定对数据的列的数据限制性的要求（对表的列中的数据进行限制） 
+> 保证的数据的有效性
+> 保证数据的完整性  
+> 保证数据的正确性 
+
+常见的约束: 
+
+1. 非空约束(not null) : 限制此列的值必须提供
+2. 唯一约束(unique) : 此列的多条数据 不唯一性
+3. 主键约束(primary key) : 非空 + 唯一 
+4. 外键约束(foreign key) : 建立不用表之间的关联关系
+
+
+## 非空约束 
+> 此列的值必须提供
+
+create table Name_table(
+field tpye not null
+);
+
+## 唯一约束
+> 列中的值不能重复 
+
+create table Name_table(
+field tpye not null,
+field tpye unique
+);
+
+
+## 主键约束
+> 主键 -- 记录的唯一标识 在一张表中只能有一个主键（主键可以是一列  也可以是多个列的组合）
+
+create table Name_table(
+field tpye not null,
+field tpye unique,
+field tpye primary key
+);
+
+Or   
+
+
+create table Name_table(
+field tpye not null,
+field tpye unique,
+field tpye 
+primary key(field_name)
+);
+
+
+### 删除主键约束
+`alter table New_table drop primary key` 
+
+### 添加主键约束
+`alter table New_table modify New_field tpye primary key` 
+
+## 主键自动增长
+> 有些数据表中没有合适的作为主键时，可以额外定义一个与记录本身无关的列为主键。可将此列定义成int, 同时设置为自动增长，当我们在向数据标中新增一条记录时， 无需提供ID列的值， 它会自动生成  
+
+> 定义主键自动增长 
+
+create table Name_table(
+field int primary key auto_increment,
+field tpye not null,
+field tpye unique
+);
+
+> 注意:
+> 自动增长从1开始 每添加一条记录自动+1 
+> 删除添加的某条记录之后自动增长的数据也不会重复生成  
+> 即: 自动增长只保证唯一性， 不保证连续性
+
+
+## 联合主键
+>  将数据表中的多列联合在一起作为表的主键
+
+create table New_field(
+field_1 char(8),
+field_2 int,
+field_3 varchar
+primary key(field_1,field_2)
+);
+
+
+## DML 数据操作语言
+> 用于完成对数据的 插入，删除，
+
+### 插入
+<++>
 
