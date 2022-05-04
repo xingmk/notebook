@@ -1,4 +1,4 @@
-# create  &&  inquire (创建 查询)
+## create  &&  inquire (创建 查询)
 ```mysql
 
 create database DB_name;  --> create   
@@ -11,21 +11,21 @@ show databases;           --> show more
 show create database DB_name  --> show instruction when creating
 ```
 
-# Revise (修改)
+## Revise (修改)
 ```mysql
 alter DB_name character set gbk;  --> alter character format
 
 ```
 
-# delete (删除)
+## delete (删除)
 ```
 drop database DB_name;  --> delete database
 drop database if exists DB_name;  -->  delete (judge if exists)
 ```
 
-# `use DB_name`  --> Use before creating a data table 
+## `use DB_name`  --> Use before creating a data table 
 
-# create table
+## create table
 > 一个表格由多列组成   
 ```mysql
 create  table Name_table(
@@ -49,17 +49,17 @@ ste_tel cahr(11) not null unique,
  
 ```
 
-# inquire table 
+## inquire table 
 
 `show tables;`   --> inquire tables
 `desc Name_table`   --> inquire the structure of table
 
-# delete table
+## delete table
 
 `drop Name_table`   --> delete table
 `drop table if exists Name_table`  --> delete judge if exist 
 
-# alter table
+## alter table
 ```mysql
 
 alter table Old_name to New_name;   --> alter table name  
@@ -69,9 +69,9 @@ lter table Old_field New_field type;  --> alter the name and type of tabel
 alter table Name_table modify Name_field New_type  -->only alter type of row
 alter table Name_table drop Name_field;   --> delete table field
 ```
-# type of data
+## type of data
 
-## 数值类型
+### 数值类型
 |   type    |   memoroy space size  |   range   |   explanation     |
 |   :---:   |   :---:   |   :---:   |   :---:   |
 |    tinyint  |    1byte  |    有符号 -128 ～ 127  无符号 0 ～ 255  | 小型整数(age)    |
@@ -84,3 +84,24 @@ alter table Name_table drop Name_field;   --> delete table field
 |decimal| | | |
 
 > decimal(X.x)
+
+### character type
+> 存储字符的序列的类型
+
+| tpye | range | explanation |
+|:---:|:---:|:---|
+| **char** | 0 - 255 byte | char()定义存储的字节长度 如果少于则补'\u000'直至定长|  
+| **varchar** | 0 - 65535 | 可变字符 varchar() |
+| tinyblob | 0 -255 | 存储二进制字符串 |
+| blob | 2- 65535 |存储二进制字符串 |
+| mediumblob | 0 -1677215 |存储二进制字符串 |
+| longblob | 0 -4294967295 | 存储二进制字符串| 
+| tinytext | 0 - 255 |文本数据字符串 |
+| text | 0 - 65535 | 文本数据字符串 |
+| mediumtext | 0 - 1677215 | 文本数据字符串 |
+|**longtext** | 0 - 4294967295 | 文本数据字符串 |
+
+
+
+
+
