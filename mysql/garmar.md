@@ -102,6 +102,10 @@ alter table Name_table drop Name_field;   --> delete table field
 |**longtext** | 0 - 4294967295 | 文本数据字符串 |
 
 
+### date type 
+> 可以使用字符串存储时间  
+
+
 
 
 
