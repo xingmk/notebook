@@ -230,12 +230,19 @@ delete from stus where where stu_age>20
 
 ### 修改数据
 > 对表中的数据进行修改
- 
+
+```mysql
+update Name_table set field='' where field=''(condition)
+```
+
+eg:
+```mysql
+update stus set stu_name='edison' where stu_num='202111'
 
 
+```
 
-
-
+<++>
 
 
 
