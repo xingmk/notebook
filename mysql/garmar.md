@@ -231,3 +231,11 @@ delete from stus where where stu_age>20
 ### 修改数据
 > 对表中的数据进行修改
  
+
+
+
+
+
+
+
+
