@@ -234,7 +234,7 @@ delete from stus where where stu_age>20
 ```mysql
 update Name_table set field='NEW' where field=''(condition)
 
-update Name_table set field='NEW',...,field='NEW' where stu_num='';
+update Name_table set field='NEW',...,field='NEW' where field=''(condition);
 ```
 
 eg:
