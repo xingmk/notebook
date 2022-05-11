@@ -244,6 +244,102 @@ update stus set stu_name='edison' where stu_num='202111';
 update stus set field_name='NEW' where stu_num='202111';
 ```
 
+### DQL 数据查询语言
+> 从数据表中提取满足特定条件的记录
+>  单表查询
+>  多表联合查询
+
+#### 查询基础
+```
+select 关键词指定要显示查询到的记录的那些列
+select field_name1,field_name2... from Name_table
+
+select * from Name_table;
+```
+
+#### where 子句
+> 在删除，修改及查询的语句后都可以添加where子句(条件) 用于筛选满足特定的添加的数据进行删除
+>  修改和查询
+
+```mysql
+
+delete from Name_table where condition
+update Name_table set ... where condition
+select ... from Name_table where condition
+
+```
+Condition
+
+```mysql
+ '='
+select = from stus where stu_num = '202111'
+
+ '!='
+select * from stus where stu_num != '202111'
+select * from stus where stu_num <> '202111'
+
+ '>'
+select * from stus where stu_age>18;
+
+ '<'
+select * from stus where stu_age<20;
+
+ '>='
+select * from stus where stu_age>=20;
 
 
+ '<='
+select * from stus where stu_age<=20;
 
+ between and 区间查询
+select * from stus where stu_age between 18 and 20 
+```
+
+### 多条件查询
+> 在where子句中 可以将多个条件通过逻辑预算(and or not )
+> 进行连接 通过多个条件来筛选要操作的数据
+
+```mysql
+
+'and' 并且 --> 筛选多个条件同时满足的记录 
+select * from stus where stu_gender='女' and stu_age<21;
+
+'or' 或者 --> 筛选多个条件中至少满足一个条件的记录
+select * from stus where stu_gender='女' or stu_age<21;
+
+'not' 取反
+select * from stus where stu_age not between 18 and 20;
+
+```
+
+### like子句
+> 在where子句中，我们可以使用LIKE关键字来实现模糊查询
+
+```mysql
+
+select * from Name_table where Name_field like 'reg';
+
+```
+
+> like 关键字的reg表达式
+  1. % 表示任意多个字符[%o%包含字母o] 
+  2. _ 表示任意一个字符[_o% 第二字母为o]
+
+eg:
+
+```mysql
+查询学生姓名包含字母o的学生信息
+select * from stus where stu_name like '%o%'
+
+查询学生姓名第一个字为 ‘张’的学生信息
+
+select * from stus where stu_name like '张%'
+
+查询学生最后一个字母为o的学生信息
+select * from stus where stu_name like '%o'
+
+查询学生姓名中第二为o的学生信息
+select * from stus where stu_name like '_o%'
+```
+
+<++>
