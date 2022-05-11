@@ -82,7 +82,7 @@ alter table Name_table drop Name_field;            --> delete table field
 |   type    |   memoroy space size  |   range   |   explanation     |
 |   :---:   |   :---:   |   :---:   |   :---:   |
 |    tinyint  |    1byte  |    有符号 -128 ～ 127  无符号 0 ～ 255  | 小型整数(age)    |
-|   smallint    | 2byte (16bit)
+|   smallint    | 2byte
 |   mediumint   | 3
 |**int/integer** | 4 ||整数|
 |bigint| 8 | | 大型整数|
