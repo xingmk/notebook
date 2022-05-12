@@ -385,11 +385,96 @@ select stu_name as 姓名,2021-stu_age as 出生年份 from stus;
 > 将查询到的满足条件的记录按照指定的列的升序/降序排列 
 
 ```mysql
+### 单字段排序列
 select * from New_table where condition order by  Name_field  asc|desc
 
 select * from stus where stu_age>15 order by stu_gender;
+
+### 多字段排序
+select * from stus where stu_age>15 order by stu_gender asc,stu_age desc;
+
+> 先按照姓名进行升序排列 
+> 再按照年龄进行降序排列
+
 ```
 **asc 升序** 
 **desc 降序** 
+
+## 聚合函数
+> 提供了一些可以对查询记录的列进行计算的函数--聚合函数
+
+- count  
+- max 
+- min
+- sum
+ 
+ **count()**  统计函数，统计满足条件的指定字段值的个数(记录数)
+```mysql
+select count(stu_num) from stus;
+
+```
+
+
+**max()** 计算最大值，查询满足条件的记录中指定的最大值
+
+```mysql
+select max(stu_age) from stus;
+
+select max(stu_age) from stus where stu_gender='女';
+
+```
+
+**min()**  计算最小值，查询满足条件的记录中指定的最小值
+
+```mysql
+select min(stu_age) from stus;
+
+select min(stu_age) from stus where stu_gender='女';
+
+```
+
+**sum()**  计算和，查询满足条件的记录中，指定列的值的和
+```mysql
+select sum(stu_age) from stus;
+
+select sum(stu_age) from stus where stu_gender='男';
+```
+
+**avg()**  求平均值，查询满足条件的记录中 计算指定列的平均值  
+```mysql
+select avg(stu_age) from stus;
+
+select avg(stu_age) from stus where stu_gender='男';
+```
+
+**日期函数** 
+> 当我们想日期类型的函数添加数据时，
+> 可以通过字符串类型赋值(字符串的格式必须为yyyy-mmm--dd hh:mm:ss) 
+> 如果我们想要获取当前系统时间添加到日期类型的列 可以使用now() 或者 sysdate() 
+
+eg: 
+```mysql
+**通过字符串给日期类型的赋值** 
+insert into stus(stu_num,stu_enterence)
+values('202111','2022-05-12 11:20:00')
+
+**通过now()获取当前时间** 
+insert into stus(stu_num,stu_enterence)
+values('202111',now()) 
+
+**通过sysdate()获取当前时间** 
+insert into stus(stu_num,stu_enterence)
+values('202111',sysdate());
+
+**通过now和sysdate获取当前系统时间** 
+select now();
+
+select sysdate();
+
+```
+
+
+
+
 
 
