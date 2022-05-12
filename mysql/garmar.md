@@ -473,7 +473,35 @@ select sysdate();
 
 ```
 
+## 字符串函数
+> 就是通过SQL指令对字符串进行处理
 
+```mysql
+#### concat
+select concat(Name_field1,Name_field2,.....)
+
+select concat(stu_name,'-',stu_gender) from stus;
+
+#### upper(filed) 将字段的值转换成大写
+select upper(stu_name) from stus;
+
+#### lower(filed) 将指定列的值转换成小写
+select lower(stu_name) from stus;
+
+#### substring(filed,start,len) 从指定列中截取部分显示 start从1开始
+select stu_name,substring(stu_tel,8,4) from stus;
+
+```
+
+### 分组查询
+> 分组--就是将表中的记录按照指定的类进行分组
+
+```mysql
+select * from stus group by stu_gender;
+
+```
+
+<++>
 
 
 
