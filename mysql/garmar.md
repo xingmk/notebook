@@ -352,5 +352,44 @@ select * from stus where stu_name like '_o%'
 ```
 
 ### 对查询结果的处理
+> 声明显示查询结果的指定列
+
+**设置查询的列**   
+`select from stus where stu_age>20;` 
+
+**计算列** 
+```
+select stu_name,2021-stu_age from stus;
+```
+
+**字段别名**  
+> 可以为查询结果的列名 去一个语义性更强的别名  
+> as 可省略
+
+```mysql
+select stu_name,2021-stu_age as stu_birth_year from stus;
+
+select stu_name as 姓名,2021-stu_age as 出生年份 from stus;
+```
+
+**消除重复行**   
+> 从查询结果中将重复的记录消除
+
+```mysql
+原：select stu_age from stus;
+
+后：select distinct stu_age from stus;
+```
+
+**order by 排序**  
+> 将查询到的满足条件的记录按照指定的列的升序/降序排列 
+
+```mysql
+select * from New_table where condition order by  Name_field  asc|desc
+
+select * from stus where stu_age>15 order by stu_gender;
+```
+**asc 升序** 
+**desc 降序** 
 
 
