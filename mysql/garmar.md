@@ -18,7 +18,7 @@ alter DB_name character set gbk;        --> alter character format
 ```
 
 ## delete (删除)
-```
+```mysql
 drop database DB_name;              --> delete database 
 drop database if exists DB_name;    -->  delete (judge if exists)
 ```
@@ -139,22 +139,28 @@ alter table Name_table drop Name_field;            --> delete table field
 ## 非空约束 
 > 此列的值必须提供
 
+```mysql
 create table Name_table(
 field tpye not null
 );
+```
+
+<++>
 
 ## 唯一约束
 > 列中的值不能重复 
-
+```mysql
 create table Name_table(
 field tpye not null,
 field tpye unique
 );
 
+```
 
 ## 主键约束
 > 主键 -- 记录的唯一标识 在一张表中只能有一个主键（主键可以是一列  也可以是多个列的组合）
 
+```mysql
 create table Name_table(
 field tpye not null,
 field tpye unique,
@@ -170,6 +176,7 @@ field tpye unique,
 field tpye 
 primary key(field_name)
 );
+```
 
 
 ### 删除主键约束
@@ -183,11 +190,13 @@ primary key(field_name)
 
 > 定义主键自动增长 
 
+```mysql
 create table Name_table(
 field int primary key auto_increment,
 field tpye not null,
 field tpye unique
 );
+```
 
 > 注意:
 > 自动增长从1开始 每添加一条记录自动+1 
@@ -198,25 +207,33 @@ field tpye unique
 ## 联合主键
 >  将数据表中的多列联合在一起作为表的主键
 
+```mysql
 create table New_field(
 field_1 char(8),
 field_2 int,
 field_3 varchar
 primary key(field_1,field_2)
 );
+```
 
 
 ## DML 数据操作语言
 > 用于完成对数据的 插入，删除,修改操作
 
 ### 插入
+
+```mysql
+
 insert into Name_table values(Name_field1,Name_field2....)values(value1,value2....);
+```
 
 > value 需要与 field 顺序保持一致
 
 #### 当需要向表中的所有字段添加时
 
+```mysql
 insert into Name_table values(value1,value2....);
+```
 
 > value 需要与 stable中的field 顺序保持一致
 
@@ -229,7 +246,7 @@ delete from Name_table [where field='condition']
  ```
 
 eg:
-```
+```mysql
 delete from stus where stu_num='202111'
 
 delete from stus where where stu_age>20
@@ -259,7 +276,7 @@ update stus set field_name='NEW' where stu_num='202111';
 >  多表联合查询
 
 #### 查询基础
-```
+```mysql
 select 关键词指定要显示查询到的记录的那些列
 select field_name1,field_name2... from Name_table
 
@@ -501,7 +518,7 @@ select * from stus group by stu_gender;
 
 ```
 
-<++>
+
 
 
 
