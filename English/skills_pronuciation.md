@@ -1,7 +1,3 @@
-
-![音标](/home/xmk/Github/Notes/English/phonetic.png) 
-![alt](/home/xmk/Pictures/papers/OHR.AZBend_ZH-CN9943469006_1920x1080.jpg) 
-
 # 连读
 > 两个相邻单词首尾音素自然的拼读在一起，中间不停顿.
 
