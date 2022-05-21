@@ -515,10 +515,51 @@ select stu_name,substring(stu_tel,8,4) from stus;
 ```mysql
 select * from stus group by stu_gender;
 
+select Name_field from stus group by stu_gender;  
+
 ```
 
+`select 分字段/聚合函数 from 表名 [where 条件] group by 分组列名 [having 条件] [order by 排序字段]` 
+
+- group是绝对没有having的
+- select 后使用 * 显示对查询的结果进行分组之后，显示每组的第一条记录(这种显示通常是无意义的)
+- select 后通常显示分组字段和聚合函数(对分组后的数据进行统计 求和 平均值等)
+- 语句执行属性:
+    - 先根据where 条件从数据库查询结果
+    - 对查询结果进行分组
+    - 执行having对分组后的数据进行筛选
+
+eg:  
+> 先对学生按照年龄进行分组，后统计各组的学生数量，还可以对最终的结果进行排序
+
+`select stu_age,count(stu_num) from stus group by stu_age order by stu_age` 
 
 
+### 分页查询
+> 当数据中的记录比较多的时候，如果一次性全部查询出来显示给用户，用户的可读性/体验性就不太好，因此我们可以将这些数据分页进行展示。  
 
+**语法** 
 
+```mysql
+select ...
+from ...
+where ...
+limit param1,param2
+```
+- param1 int, 表示获取查询语句的结果中的第一条数据的索引(索引从0开始)
+- param2 int, 表示获取的查询的记录条数
+    - 如果剩下的数据条数<param2 则返回剩下的所有记录
 
+```mysql
+### 查询第一页 
+select * from stus [where ...] limit 0,3;  (1-1)*3
+
+### 查询第二页
+select * from stus [where ...] limit 3,3;   (2-1)*3
+
+### 如果在一张数据表中，
+### pageNum表示查询的页码，pageSize表示每页显示的条数
+select * from <tableName> [where ...] limit (pageNum-1)*pageSize
+```
+
+<++>
