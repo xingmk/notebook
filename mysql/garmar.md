@@ -562,4 +562,28 @@ select * from stus [where ...] limit 3,3;   (2-1)*3
 select * from <tableName> [where ...] limit (pageNum-1)*pageSize
 ```
 
-<++>
+### 数据表的关联关系
+
+#### 关联关系介绍
+> mysql 是一个关系库，不仅可以存储数据，还可以维护数据与数据之间的关系  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
