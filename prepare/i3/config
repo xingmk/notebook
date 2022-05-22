@@ -29,13 +29,13 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 # background-light
-bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
+# bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
+# bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
 # Font for window titles. Will also be used by the bar unless a different font is used in the bar {} block below.
  # font pango:monospace 8
 # Screen brightness controls
-# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 #------------------Mod------------------
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
@@ -48,8 +48,18 @@ bindsym $mod+Shift+s restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+# set screenshot 
+bindsym $mod+s  exec  mate-screenshot -i
+# start cloud-music
+bindsym $mod+shift+m exec netease-cloud-music
+# start screen_recorde
+bindsym $mod+r exec simplescreenrecorder
+# start the bluetooth
+bindsym $mod+shift+b exec blueberry
+# screen lock
+bindsym $mod+b exec i3lock-fancy
 # start terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec st
 # kill focused window
 bindsym $mod+c kill
 # split in horizontal orientation
@@ -60,13 +70,12 @@ bindsym $mod+g split v
 bindsym $mod+x layout toggle split
 # Enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-# Start dmenu (a program launcher)
+#mybar Start dmenu (a program launcher)
 bindsym $mod+m exec dmenu_run
 # Start firefox and google
-bindsym $mod+shift+f exec firefox
-bindsym $mod+shift+g exec google-chrome-stable
-bindsym $mod+shift+d exec dingtalk
+bindsym $mod+d exec dingtalk
 bindsym $mod+q exec firefox
+bindsym $mod+z exec netease-cloud-music
 # change wallpaper
 #bindsym $mod+d exec variety -n
 #bindsym $mod+u exec variety -p
@@ -86,7 +95,7 @@ bindsym control+shift+h scratchpad show
 
 #------------------Control------------------
 # start terminal
-bindsym control+Return exec alacritty
+bindsym control+Return exec st
 # kill focused window
 bindsym control+q kill
 bindsym control+shift+q kill
@@ -104,10 +113,10 @@ bindsym control+shift+m exec dmenu_run
 bindsym control+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-            
+
 #------------------Autostar------------------
 # Autostart applications
-exec_always --no-startup-id alacritty
+exec_always --no-startup-id st
 exec_always xmodmap ~/.xmodmap
 exec_always --no-startup-id picom 
 exec_always fcitx5
@@ -126,6 +135,11 @@ exec --no-startup-id nm-applet
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+
+# auto choose Pictures ~/Pictures/DesktopBackground 下要放几张图片
+#exec --no-startup-id feh --randomize --bg-fill ~/Pictures/DesktopBackground 
+# choose Pictures 
+# exec --no-startup-id feh --randomize --bg-center ~/Pictures/papers/OHR.GCThunderstorm_ZH-CN7535350453_1920x1080.jpg
 
 #------------------Windown------------------
 # change focus
