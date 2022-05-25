@@ -27,7 +27,7 @@
 
 14.合并分支：git merge xx（xx为分支名）
 
-15.列出本地分支：git brancjh
+15.列出本地分支：git branch
 
 16.删除分支:git branch -d xx (xx为分支名，-D强制删除)
 
