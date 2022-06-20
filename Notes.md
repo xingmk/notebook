@@ -28,7 +28,11 @@ sudo pacman -R <package>
 sudo pacman -Rs <package>
 sudo pacman -Rns <package>
 
+### 删除孤包
 sudo pacman -R $(pacman -Qdtq)
+
+### 删除未安装或旧版本的包文件缓存也会将安装着的包文件缓存一并删除
+sudo pacman -Scc
 ```
 
 # Debian package management
