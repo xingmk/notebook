@@ -189,5 +189,6 @@ systemctl start mysqld.service
 `AlTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'NEW_PASSWORD'`   
 
 
+sudo pacman -S sof-firmware
 
 curl cip.cc
