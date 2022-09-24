@@ -2,17 +2,15 @@
 > Author: Xingmk
 
 ## PREPARE
-1. Download mirrors   
-Download [manjaro.ios](https://manjaro.org/download/) 
+1. Download manjaro.ios file   
+Address: [manjaro.ios](https://manjaro.org/download/) 
 
-1. Make U-disk   
+2. Make U-disk   
 Tool:[Rufus](https://rufus.ie/zh/)   
  
 3. Go to ur UEFI and close these chooses    
 - **Secure boot**  
 - QuickBoot/FastBoot
-- Intel Smart Response Technology (SRT)
-- FastStartu
 
 
 ## INSTALL 
@@ -21,7 +19,27 @@ Tool:[Rufus](https://rufus.ie/zh/)
 3. Start Installing
 4. Reboot
  
+### Question:
+- #### Maybe your wife cann't work
  
+1. Connect the wire-net  
+`sudo pacman -S yay`  
+2. Check your wireless network card model and download the corresponding driver  
+`yay -S ...` 
+
+> eg: if your wireless network card is rtl18821ce  
+> `yay -S rtl18821ce-dkms-git` 
+3. Check your linux kernel and download the corresponding headers   
+`sudo pacman -S linux000-headers` 
+ 
+>eg: if your linux kernel is 4.19   
+>`sudo pacman -S linux419-headers` 
+
+4. Restart driver  
+`sudo modprobe network-card-model` 
+> eg: 8821ce  
+> `sudo modprobe 8821ce` 
+
 ## CHANGE THE MIRRORS TO CHINA 
 **FIRST:**  
 `sudo nano /etc/pacman.conf `  
@@ -35,7 +53,7 @@ or
  Server = https: //mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 ```
 > Keep and exit  
-   
+
 **EXECUTE** 
 ```sh
 1. sudo pacman-mirrors -c China
@@ -53,7 +71,7 @@ or
 
 ### Add pacman hight light
    
-> Delete the color commit  
+> Delete the color commit    
 `sudo vim /etc/pacman.conf`    
     
 
